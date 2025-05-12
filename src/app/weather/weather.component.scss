@@ -1,0 +1,174 @@
+//import
+@import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
+
+//all
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100vw;
+    height: 100vh;
+    
+    background-image: url('../../../public/img/main.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+}
+
+//main
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color: rgba(255, 255, 255, 0.574);
+    padding: 48px;
+    border-radius: 50px;
+}
+//header
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+h1{
+    font-family: "Allerta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+header h3 {
+    text-align: center;
+
+    width: 400px;
+
+    line-height: 1.5;
+    font-weight: 100;
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+    color: rgb(81, 81, 81);
+
+    margin-bottom: 10px;
+}
+
+//input
+
+form{
+    display: flex;
+    background-color: rgb(177, 177, 177);
+    border-radius: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+input{
+    width: 300px;
+    height: 38px;
+    padding-left: 20px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgba(255, 255, 255, 0);
+    outline: none;
+}
+button{
+    width: 80px;
+
+    border: none;
+    background-color: white;
+    border-radius: 20px;
+
+    cursor: pointer;
+}
+
+//container-weather
+.container-weather, .data-sky{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.container-weather h2 {
+    font-family: "Allerta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 25px;
+    margin-top: 20px;
+}
+.data-name-country{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.data-name-country h5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+}
+.data-weather{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-right: 26px;
+    
+}
+
+
+.data-sky img {
+    width: 150px;
+    height: 150px;
+
+}
+.data-sky p {
+    margin-top: -30px;
+    text-align: center;
+    font-size: 12px;
+}
+.data-celsius{
+    display: flex;
+    align-items: center;
+    
+    text-align: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+.p-celsius{
+    font-family: "Allerta", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
+}
+.data-celsius-min-max{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    gap: 5px;
+}
+.data-air{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    font-size: 12px;
+}
+
+
+//icone angular material
+mat-icon {
+    vertical-align: middle;
+    margin-right: 5px; 
+}

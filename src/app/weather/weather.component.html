@@ -1,0 +1,51 @@
+<body>
+    <main>
+        <header>
+            <h1>Confira a previsão do tempo</h1>
+            <h3>Digite o nome de uma cidade para exibir informações do tempo</h3>
+        </header>
+
+        <form [formGroup]="weatherForm" (ngSubmit)="searchCity()">
+            <input type="text" name="" id="" placeholder="Digite o nome de uma cidade" formControlName="city"> <button type="submit"><mat-icon>search</mat-icon></button>
+            
+        </form>
+
+        <div style="color: rgba(165, 42, 42, 0.703);" *ngIf="errorMessage">
+            <p>{{ errorMessage }}</p>
+        </div>
+
+        <div class="container-weather" *ngIf="weatherData">
+            <div class="data-name-country">
+
+                <h2 *ngIf="weatherData">{{ weatherData.name | uppercase}}</h2> <h5 *ngIf="weatherData?.sys?.country">({{weatherData?.sys?.country}})</h5>
+            </div>
+
+            <div class="data-weather">
+
+                <div class="data-sky">
+                    <img  *ngIf="weatherData?.weather?.[0]?.icon" 
+                    [src]="'http://openweathermap.org/img/wn/' + weatherData?.weather?.[0]?.icon + '@2x.png'" alt="icone que representa o clima atual">
+                    <p>
+                        {{ weatherData?.weather?.[0]?.description }}</p>
+                </div>
+
+                <div>
+                    <div class="data-celsius">
+                        <p class="p-celsius"> {{ weatherData?.main?.temp }} &deg;C</p>
+                    </div>
+                    <div class="data-celsius-min-max">
+                        <p *ngIf="weatherData?.main?.temp_max">Max: {{ weatherData?.main?.temp_max }} &deg;C</p>
+                        <p *ngIf="weatherData?.main?.temp_min">Min: {{ weatherData?.main?.temp_min }} &deg;C</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="data-air">
+                <p><mat-icon>air</mat-icon> Ventos:  {{ weatherData?.wind?.speed }} km/h</p>
+                <p><mat-icon>water_drop</mat-icon> Úmidade: {{ weatherData?.main?.humidity }} %</p>
+            </div>
+
+        </div>
+    </main>
+</body>
