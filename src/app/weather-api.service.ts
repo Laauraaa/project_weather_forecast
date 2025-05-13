@@ -6,7 +6,7 @@ import { WeatherAPIResult } from './models/weatherAPI.model';
   providedIn: 'root'
 })
 export class WeatherAPIService {
-  private apiUrl = 'http://localhost:3000/weather'; 
+  private apiUrl = '/weather'; 
 
   constructor(private httpClient: HttpClient) {}
 
