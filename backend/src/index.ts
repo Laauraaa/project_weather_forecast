@@ -31,9 +31,10 @@ app.get('/weather', async (req: Request, res: Response) => {
 app.use(express.static(path.join(__dirname, '../dist/project_weather_forecast/browser')));
 
 // ✅ Rota fallback (SPA)
-app.get('*', (req, res) => {
+app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../dist/project_weather_forecast/browser/index.html'));
 });
+
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
