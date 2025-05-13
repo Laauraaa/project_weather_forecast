@@ -3,6 +3,7 @@ dotenv.config();
 import express, { Request, Response } from 'express';  
 import axios from 'axios';  
 import cors from 'cors';
+import path from 'path';
 
 console.log('API_KEY:', process.env.API_KEY); // Verifique se a variável de ambiente foi carregada corretamente
 
@@ -28,4 +29,13 @@ app.get('/weather', async (req: Request, res: Response) => {
 
 app.listen(PORT, () => {
   console.log(`Servidor rodando na porta ${PORT}`);
+});
+
+// depois de app.use(cors()); e app.use(express.json());
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, '../dist/project_weather_forecast/browser')));
+
+// rota fallback para SPA (Angular)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/project_weather_forecast/browser/index.html'));
 });
