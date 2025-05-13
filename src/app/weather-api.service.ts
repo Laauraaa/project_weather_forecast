@@ -6,7 +6,7 @@ import { WeatherAPIResult } from './models/weatherAPI.model';
   providedIn: 'root'
 })
 export class WeatherAPIService {
-  private apiUrl = '/weather'; 
+  private apiUrl = 'https://project-weather-forecast.onrender.com/weather'; 
 
   constructor(private httpClient: HttpClient) {}
 
