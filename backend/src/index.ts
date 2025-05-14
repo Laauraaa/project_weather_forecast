@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.use(express.static(path.join(__dirname, '../dist/project_weather_forecast/browser')));
+app.use(express.static(path.join(__dirname, '../../dist/project_weather_forecast/browser')));
 
 app.get('/weather', async (req: Request, res: Response) => {
   const city: string = req.query.city as string;
@@ -30,7 +30,7 @@ app.get('/weather', async (req: Request, res: Response) => {
 });
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/project_weather_forecast/browser/index.html'));
+  res.sendFile(path.join(__dirname, '../../dist/project_weather_forecast/browser/index.html'));
 });
 
 app.listen(PORT, () => {
