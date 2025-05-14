@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-app.get(' /weather', async (req: Request, res: Response) => {
+app.get('/weather', async (req: Request, res: Response) => {
   const city: string = req.query.city as string;
   const apiKey = process.env.API_KEY;
   
