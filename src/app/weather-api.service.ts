@@ -11,6 +11,6 @@ export class WeatherAPIService {
   constructor(private httpClient: HttpClient) {}
 
   getCity(city: string) {
-    return this.httpClient.get<WeatherAPIResult>(`${this.apiUrl}?city=${city}`);
+    return this.httpClient.get<WeatherAPIResult>(`${this.apiUrl}/${city}`);
   }
 }
