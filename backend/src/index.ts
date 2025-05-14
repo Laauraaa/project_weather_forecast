@@ -15,7 +15,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, '../dist/project_weather_forecast/browser')));
 
-app.get('/weather', async (req: Request, res: Response) => {
+app.get('/weather/:city', async (req: Request, res: Response) => {
   const city: string = req.query.city as string;
   const apiKey = process.env.API_KEY;
   
