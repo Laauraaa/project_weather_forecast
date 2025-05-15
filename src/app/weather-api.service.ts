@@ -6,11 +6,12 @@ import { WeatherAPIResult } from './models/weatherAPI.model';
   providedIn: 'root'
 })
 export class WeatherAPIService {
-  private apiUrl = 'https://project-weather-forecast.onrender.com/weather'; 
+  APIkey:string = '45f8d6a48ac2279c8954243037bb47b8'
 
   constructor(private httpClient: HttpClient) {}
 
-  getCity(city: string) {
-    return this.httpClient.get<WeatherAPIResult>(`${this.apiUrl}/${city}`);
-  }
+  getCity(city: string){
+    return this.httpClient.get<WeatherAPIResult>(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${this.APIkey}&units=metric&lang=pt_br`);
+  };
+
 }
